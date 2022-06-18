@@ -1,0 +1,356 @@
+@font-face {
+  font-family: MyFont;
+  src: url(../../SourceSansPro-Regular.ttf);
+  font-weight: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: MyFont;
+}
+
+.admin-wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding-left: 18vw;
+  background: #959595;
+}
+.admin-wrapper .header {
+  width: 100%;
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.admin-wrapper .header .links {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  height: 3vw;
+  align-items: center;
+  margin-left: 2vw;
+}
+.admin-wrapper .header .links li {
+  margin-right: 2vw;
+}
+.admin-wrapper .header .links li a {
+  font-size: 0.8vw;
+  text-decoration: none;
+  padding: 0.5vw 1vw;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  background: #242424;
+  color: #f1a11a;
+  transition: 0.2s ease-in-out;
+  border-radius: 0.3vw;
+}
+.admin-wrapper .header .links li a:hover {
+  background: #343434;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.admin-wrapper .admin-sidebar {
+  width: 18vw;
+  height: 100vh;
+  position: fixed;
+  box-shadow: 5px 0 30px 0px rgba(0, 0, 0, 0.75);
+  background-color: #242424;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.admin-wrapper .admin-sidebar .admin-name {
+  color: #f1a11a;
+  margin-left: 3.5vw;
+  display: flex;
+  align-items: center;
+  height: 3vw;
+}
+.admin-wrapper .admin-sidebar .admin-name p {
+  font-size: 1vw;
+  padding: 0.5vw 1vw;
+}
+.admin-wrapper .admin-sidebar .links {
+  margin-top: 3vw;
+  width: 100%;
+}
+.admin-wrapper .admin-sidebar .links ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+.admin-wrapper .admin-sidebar .links ul li {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.admin-wrapper .admin-sidebar .links ul li a {
+  font-size: 0.85vw;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  color: #f1f1f1;
+  padding: 0.5vw 1vw;
+  width: 90%;
+  display: block;
+  transition: 0.2s ease-in-out;
+}
+.admin-wrapper .admin-sidebar .links ul li a:hover {
+  color: #f1a11a;
+  width: 100%;
+  border-bottom: 1px solid #f1a11a;
+}
+.admin-wrapper .admin-sidebar .links ul li .active {
+  color: #f1a11a;
+  width: 100%;
+  border-bottom: 1px solid #f1a11a;
+}
+.admin-wrapper .admin-main {
+  padding-left: 2vw;
+  margin-top: 2vw;
+}
+.admin-wrapper .admin-main .sort {
+  margin-bottom: 1vw;
+}
+.admin-wrapper .admin-main .sort form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.admin-wrapper .admin-main .sort form input {
+  margin-left: 1vw;
+  background: #4e4e4e;
+  border: none;
+  color: #e7e7e7;
+  padding: 0.5vw 0.8vw;
+}
+.admin-wrapper .admin-main .sort form input:focus {
+  outline: none;
+}
+.admin-wrapper .admin-main h1 {
+  margin-bottom: 2vw;
+  margin-top: 2vw;
+  font-size: 1.5vw;
+}
+.admin-wrapper .admin-main .stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.admin-wrapper .admin-main .stats .stat {
+  margin: 1.5vw 1vw;
+  width: 30vw;
+  height: 5vw;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 2vw;
+  background: linear-gradient(270deg, #454545, #212121);
+  background-size: 400% 400%;
+  transition: 0.5s ease-in-out;
+}
+.admin-wrapper .admin-main .stats .stat:hover {
+  background-position: 100% 50%;
+}
+.admin-wrapper .admin-main .stats .stat span {
+  position: absolute;
+  font-size: 4vw;
+  font-weight: bold;
+  color: #f1a11a;
+  left: 2vw;
+  font-style: italic;
+}
+.admin-wrapper .admin-main .stats .stat p {
+  color: #f1a11a;
+  position: absolute;
+  font-style: italic;
+  bottom: 0.5vw;
+  right: 3vw;
+  font-size: 1.2vw;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.admin-wrapper .admin-main h1 {
+  color: #242424;
+}
+.admin-wrapper .admin-main .prikaz table {
+  border-spacing: 0;
+}
+.admin-wrapper .admin-main .prikaz table thead {
+  background: #242424;
+}
+.admin-wrapper .admin-main .prikaz table thead th {
+  color: #f1a11a;
+  padding: 0.5vw 0.7vw;
+  min-width: 10vw;
+}
+.admin-wrapper .admin-main .prikaz table tbody tr {
+  transition: 0.2s ease-in-out;
+}
+.admin-wrapper .admin-main .prikaz table tbody tr:nth-child(even) {
+  background: #767676;
+}
+.admin-wrapper .admin-main .prikaz table tbody tr:hover {
+  background: #575757;
+}
+.admin-wrapper .admin-main .prikaz table tbody tr td {
+  padding: 0.5vw 0.7vw;
+  text-align: center;
+}
+.admin-wrapper .admin-main .prikaz table tbody tr td a {
+  color: #1c1c1c;
+}
+.admin-wrapper .admin-main .prikaz table tbody tr td .fa-trash {
+  color: #d41001;
+}
+.admin-wrapper .admin-main .prikaz table tbody tr td .obrisi {
+  border: none;
+  padding: 0.3vw 0.7vw;
+  background: #d41001;
+  color: #d0d0d0;
+}
+.admin-wrapper .admin-main .prikaz table tbody tr td .obrisi:hover {
+  cursor: pointer;
+}
+.admin-wrapper .admin-main .prikaz .oglasi thead th {
+  width: 7vw !important;
+  font-size: 0.8vw;
+  min-width: fit-content;
+}
+.admin-wrapper .admin-main .prikaz .oglasi tbody tr td {
+  font-size: 0.8vw;
+}
+.admin-wrapper .admin-main .prikaz .oglasi tbody tr td img {
+  width: 100%;
+  height: auto;
+}
+.admin-wrapper .admin-main .prikaz .oglasi tbody tr td a {
+  text-decoration: none;
+  background: #242424;
+  color: #f1a11a;
+  padding: 0.3vw 0.8vw;
+}
+.admin-wrapper .admin-main .prikaz .oglasi tbody tr td a .fa {
+  font-size: 1vw;
+}
+.admin-wrapper .admin-main .prikaz .oglasi tbody tr td a .fa-trash {
+  color: #d41001;
+}
+.admin-wrapper .admin-main .prikaz .oglasi tbody tr td input[type=submit] {
+  color: #d00000;
+  background: #242424;
+  border: none;
+  padding: 0.3vw 0.8vw;
+}
+.admin-wrapper .admin-main .prikaz .oglasi tbody tr td input[type=submit]:hover {
+  cursor: pointer;
+}
+.admin-wrapper .admin-main .prikaz .pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin-top: 1vw;
+}
+.admin-wrapper .admin-main .prikaz .pagination .page-item a {
+  font-size: 0.9vw;
+  display: block;
+  padding: 1vw;
+  color: #1c1c1c;
+  text-decoration: none;
+}
+.admin-wrapper .admin-main .prikaz .pagination .page-item span {
+  font-size: 0.9vw;
+  display: block;
+  padding: 1vw;
+}
+.admin-wrapper .admin-main .prikaz .pagination .active {
+  background: #242424;
+  color: #f1a11a !important;
+}
+.admin-wrapper .admin-main .prikaz form .form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.5vw;
+}
+.admin-wrapper .admin-main .prikaz form .form-group label {
+  width: 6vw;
+  font-size: 0.9vw;
+}
+.admin-wrapper .admin-main .prikaz form .form-group input, .admin-wrapper .admin-main .prikaz form .form-group select {
+  background: #f1f1f1;
+  color: #1c1c1c;
+  border: none;
+  font-size: 0.8vw;
+  width: 10vw;
+  padding: 0.4vw 0.8vw;
+}
+.admin-wrapper .admin-main .prikaz form .form-group input:focus, .admin-wrapper .admin-main .prikaz form .form-group select:focus {
+  outline: none;
+}
+.admin-wrapper .admin-main .prikaz form .form-group select {
+  background: #f1f1f1;
+  color: #1c1c1c;
+}
+.admin-wrapper .admin-main .prikaz form .form-group #submit {
+  width: 16vw;
+  background: #242424;
+  border: none;
+  color: #f1a11a;
+  transition: 0.2s ease-in-out;
+}
+.admin-wrapper .admin-main .prikaz form .form-group #submit:hover {
+  box-shadow: 0 5px 15px #242424;
+  cursor: pointer;
+}
+.admin-wrapper .admin-main .prikaz form .form-group #submitAdmin {
+  margin-top: 1vw;
+  background: #242424;
+  border: none;
+  color: #f1a11a;
+  transition: 0.2s ease-in-out;
+}
+.admin-wrapper .admin-main .prikaz form .form-group #submitAdmin:hover {
+  box-shadow: 0 5px 15px #242424;
+  cursor: pointer;
+}
+.admin-wrapper .admin-main .prikaz form .form-group .errors {
+  margin-top: 1vw;
+  background: #c12e2e;
+  color: #151515;
+  display: inline-block;
+  padding: 0.5vw 1vw;
+}
+.admin-wrapper .admin-main .prikaz form .unos {
+  align-items: flex-start;
+  flex-direction: column;
+}
+.admin-wrapper .error-msg {
+  margin-top: 1vw;
+  background: #c12e2e;
+  color: #151515;
+  display: inline-block;
+  padding: 0.5vw 1vw;
+  font-size: 0.8vw;
+}
+.admin-wrapper .success {
+  background: #279a18;
+}
+
+/*# sourceMappingURL=css.map */
